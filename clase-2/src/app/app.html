@@ -10,7 +10,32 @@
 <form [formGroup]="register_form" (ngSubmit)="submitRegisterForm()">
   <div>
     <label for="nombre">Ingrese su nombre:</label>
-    <input type="text" formControlName="nombre" id="nombre">
+    <input 
+      type="text" 
+      formControlName="nombre" 
+      id="nombre"
+      [ngClass]="{
+        'invalid-input': 
+        register_form.get('nombre')?.invalid 
+        && 
+        register_form.get('nombre')?.touched
+      }"
+    >
+    <!-- 
+    *ngIf necesita de CommonModule, se usa en versiones mas viejas < 16
+    -->
+    <!-- <span *ngIf="getRegisterFormError('nombre')">
+      {{getRegisterFormError("nombre")}}
+    </span> -->
+    <!-- 
+    @if No necesita del common module
+    Se usa en versiones mas modernas
+    -->
+    @if(getRegisterFormError('nombre')){
+      <span >
+        {{getRegisterFormError("nombre")}}
+      </span>
+    }
   </div>
   <div>
     <label for="email">Ingrese su email:</label>
