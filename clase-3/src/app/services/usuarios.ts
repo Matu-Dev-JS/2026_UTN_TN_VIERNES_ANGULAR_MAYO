@@ -13,7 +13,7 @@ Compartir informacion: al ser singletons pueden compartir informacion entre comp
 Como mi servicio maneja usuarios, me interesa definir que es un usuario en la aplicacion
 Para eso usamos una interface
 */
-interface Usuario {
+export interface Usuario {
   id: number;
   nombre: string;
   fechaNacimiento: Date;
@@ -32,6 +32,13 @@ export class Usuarios {
     {
       id: 1,
       nombre: "pepe Suarez",
+      fechaNacimiento: new Date(1998, 4, 15),
+      dinero: 100, 
+      descuento: 15
+    },
+    {
+      id: 2,
+      nombre: "Julieta Suarez",
       fechaNacimiento: new Date(1998, 4, 15),
       dinero: 100, 
       descuento: 15

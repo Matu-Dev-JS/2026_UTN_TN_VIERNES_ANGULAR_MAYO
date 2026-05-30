@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ListaUsuarios } from './components/lista-usuarios/lista-usuarios';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet, 
     ReactiveFormsModule, 
-    CommonModule
+    CommonModule,
+    ListaUsuarios
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
