@@ -1,0 +1,12 @@
+@if(usuario){
+    <div>
+        <h1>Detalle de usuario: {{usuario.nombre}}</h1>
+    </div>
+}
+@else {
+    <div>
+        <h3>Error de navegacion:</h3>
+        <p>{{errorMsg}}</p>
+        <button (click)='volver()'>Ir al listado de usuarios</button>
+    </div>
+}
